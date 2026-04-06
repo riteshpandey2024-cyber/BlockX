@@ -264,4 +264,8 @@ def get_chain():
 # ── Entry point ───────────────────────────────────────────────────────────────
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    # Bind explicitly to localhost on port 8000 to avoid macOS system
+    # services (e.g. AirPlay/Control Center) that may occupy port 5000
+    # and return HTTP 403 responses. Use `FLASK_ENV=development` or
+    # `debug=True` while developing.
+    app.run(host='127.0.0.1', port=8000, debug=True)
