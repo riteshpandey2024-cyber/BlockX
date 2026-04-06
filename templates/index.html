@@ -18,20 +18,20 @@
       <!-- HEADER -->
       <header>
         <div class="logo">
-          <div class="logo-title">⬡ CHAIN</div>
-          <div class="logo-sub">BLOCKCHAIN VISUALIZER v1.0</div>
+          <div class="logo-title">⬡ BlockX</div>
+          <div class="logo-sub">Blockchain Visualizer</div>
         </div>
         <div class="header-stats">
           <div class="stat">
-            <div class="stat-label">BLOCKS</div>
+            <div class="stat-label">blocks</div>
             <div class="stat-value" id="stat-blocks">0</div>
           </div>
           <div class="stat">
-            <div class="stat-label">DIFFICULTY</div>
+            <div class="stat-label">Difficulty</div>
             <div class="stat-value" id="stat-diff">3</div>
           </div>
           <div class="stat">
-            <div class="stat-label">STATUS</div>
+            <div class="stat-label">Status</div>
             <div
               class="stat-value"
               id="stat-status"
@@ -50,7 +50,7 @@
           style="display: flex; align-items: center; gap: 28px; flex-wrap: wrap"
         >
           <div class="difficulty-row">
-            <span class="diff-label">DIFFICULTY</span>
+            <span class="diff-label">Difficulty</span>
             <input
               type="range"
               id="difficulty-slider"
@@ -60,13 +60,13 @@
             />
             <span class="diff-val" id="diff-display">3</span>
             <span class="diff-label" style="margin-left: 4px"
-              >LEADING ZEROS</span
+              >Leading Zeros</span
             >
           </div>
           <button id="init-btn" class="btn btn-primary">
-            INITIALIZE CHAIN
+            Initialise Chain
           </button>
-          <button id="reset-btn" class="btn btn-danger">RESET</button>
+          <button id="reset-btn" class="btn btn-danger">Reset</button>
         </div>
       </div>
 
@@ -75,7 +75,7 @@
         <div class="panel-title">▸ Add New Block</div>
         <div class="form-row">
           <div class="field">
-            <label>TRANSACTION DATA</label>
+            <label>Transaction Data</label>
             <input
               type="text"
               id="block-data"
@@ -91,7 +91,7 @@
               "
               >&nbsp;</label
             >
-            <button class="btn btn-primary" id="mine-btn">⛏ MINE BLOCK</button>
+            <button class="btn btn-primary" id="mine-btn">⛏ Mine Block</button>
           </div>
           <div style="display: flex; flex-direction: column; gap: 6px">
             <label
@@ -103,14 +103,14 @@
               >&nbsp;</label
             >
             <button id="load-samples-btn" class="btn btn-outline">
-              LOAD SAMPLES
+              Load Sample Blocks
             </button>
           </div>
         </div>
         <div id="mining-status">
           <div class="spinner"></div>
-          <span class="mine-text">MINING IN PROGRESS...</span>
-          <span id="mine-nonce">nonce: 0</span>
+          <span class="mine-text">Mining in progress...</span>
+          <span id="mine-nonce">Nonce: 0</span>
         </div>
       </div>
 
@@ -119,7 +119,7 @@
         <div class="panel-title">▸ Blockchain</div>
         <div class="controls-row">
           <button id="validate-btn" class="btn btn-outline">
-            ✓ VALIDATE CHAIN
+            ✓ Validate Chain
           </button>
           <div class="sep"></div>
         </div>
@@ -146,11 +146,11 @@
         </p>
         <div class="tamper-row">
           <div class="field">
-            <label>BLOCK INDEX</label>
+            <label>Block Index</label>
             <select id="tamper-index" style="width: 90px"></select>
           </div>
           <div class="field">
-            <label>NEW DATA</label>
+            <label>New Data</label>
             <input
               type="text"
               id="tamper-data"
@@ -159,11 +159,11 @@
           </div>
           <div class="field">
             <label style="visibility: hidden">.</label>
-            <button id="tamper-btn" class="btn btn-danger">⚠ TAMPER</button>
+            <button id="tamper-btn" class="btn btn-danger">⚠ Tamper</button>
           </div>
           <div class="field">
             <label style="visibility: hidden">.</label>
-            <button id="rehash-btn" class="btn btn-outline">REHASH FROM</button>
+            <button id="rehash-btn" class="btn btn-outline">Rehash From Here</button>
           </div>
         </div>
       </div>
