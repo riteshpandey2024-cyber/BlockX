@@ -1,70 +1,163 @@
-# BlockX
+# BlockX 
 
-BlockX is a simple, beginner-friendly Flask demonstration app that shows how a Python server (app.py) delivers a web interface and static frontend files.
+BlockX is a hashing-based blockchain demonstration project that illustrates the core principles of blockchain data integrity and validation.
 
-Run the app to open a demo UI in your browser, interact with the page, and see how the server processes requests and returns results.
+In this system, users can add blocks where each block contains its own hash along with the hash of the previous block, forming a secure chain. This linkage ensures that any modification (tampering) in a block disrupts the entire chain integrity.
 
-This repository includes the essential pieces to explore and extend the demo:
+The project demonstrates how:
+- Each block is cryptographically linked using hashes  
+- Tampering with data changes the block hash and breaks validation  
+- The system detects inconsistencies through validation checks  
+- Rehashing the chain restores integrity and revalidates the blockchain  
 
-- app.py — the server entry point
-- templates — HTML templates used by the app
-- static — JavaScript and CSS frontend assets
-- ReferancePaper — supporting reference documents and notes
+BlockX provides a clear and practical understanding of how blockchain ensures **data security, immutability, and integrity** using hashing techniques.
 
-## Features
+---
 
-- Minimal Flask web app structure with `app.py` entry point
-- Static frontend assets under `static/` (JavaScript and CSS)
-- HTML templates under `templates/` (single-page UI in `index.html`)
-- Research/reference material in `ReferancePaper/`
+## 📸 System Workflow & Demonstration
 
-## Tech stack
+### 1. Dashboard Overview
 
-- Python (3.10+ recommended)
-- Flask (web framework)
-- Standard HTML/CSS/JavaScript for the frontend
+<p align="center">
+  <img src="static/images/DashBoard.png" width="800">
+</p>
 
-## Repository structure
+This is the main dashboard of BlockX where users can configure the blockchain, set difficulty level, and initialize the chain.
 
-Top-level layout (important files and folders):
+---
 
-- `app.py` — application entry point (starts the web server)
-- `requirements.txt` — Python dependencies
-- `templates/` — HTML templates (contains `index.html`)
-- `static/` — static assets
-	- `main.js` — frontend JavaScript
-	- `styles.css` — frontend styles
-- `ReferancePaper/` — supporting/reference documents
-- `README.md` — this file
+### 2. Initialize Blockchain
 
-## Prerequisites
+<p align="center">
+  <img src="static/images/InitialiseBlock.png" width="800">
+</p>
 
-- Python 3.10 or newer
-- Optional: `venv` for an isolated environment
+The user initializes the blockchain by setting the difficulty (number of leading zeros required for Proof-of-Work).
+
+---
+
+### 3. Add New Block (Input Data)
+
+<p align="center">
+  <img src="static/images/AddBlock1.png" width="800">
+</p>
+
+User enters transaction data into the input field before creating a new block.
+
+---
+
+### 4. Mine Block
+
+<p align="center">
+  <img src="static/images/AddBlock2.png" width="800">
+</p>
+
+After clicking **Mine Block**, the system performs Proof-of-Work and generates a valid hash with required leading zeros.
+
+---
+
+### 5. Blockchain After Adding Blocks
+
+<p align="center">
+  <img src="static/images/AfterAddBlock.png" width="800">
+</p>
+
+New blocks are added to the chain. Each block contains its own hash and the previous block’s hash, maintaining linkage.
+
+---
+
+### 6. Tamper Simulation
+
+<p align="center">
+  <img src="static/images/TryTamper.png" width="800">
+</p>
+
+User modifies the data of a block to simulate a tampering attack.
+
+---
+
+### 7. Chain Validation Failure
+
+<p align="center">
+  <img src="static/images/AfterTamper.png" width="800">
+</p>
+
+After tampering, validation fails because the hash no longer matches, breaking the blockchain integrity.
+
+---
+
+### 8. Validate Chain (Before Tampering)
+
+<p align="center">
+  <img src="static/images/ClickValidateChain.png" width="800">
+</p>
+
+When the user clicks **Validate Chain**, the system checks all blocks and confirms that the chain integrity is valid.
+
+---
+
+### 9. Rehash and Restore Integrity
+
+<p align="center">
+  <img src="static/images/Rehash.png" width="800">
+</p>
+
+After rehashing the affected blocks, the chain becomes valid again and integrity is restored.
+
+### 10. Chain Integrity Confirmed
+
+<p align="center">
+  <img src="static/images/ChainIntegrity.png" width="800">
+</p>
+
+All blocks are verified successfully, showing that no data has been modified.
+
+---
 
 
+## Key Features
+
+### Simple and Clean Interface  
+Easy-to-understand UI for beginners learning web development.
+
+### Flask-Based Backend  
+Uses Flask to manage server-side logic and routing.
+
+### Frontend Integration  
+Static files like CSS and JavaScript are organized inside the `static/` folder.
+
+### Template Rendering  
+Dynamic HTML rendering using Flask templates from the `templates/` directory.
+
+### Organized Project Structure  
+Well-structured folders for scalability and maintainability.
+
+### Learning Support  
+Includes a `ReferancePaper/` folder for additional study materials.
+
+---
+
+## System Workflow
 
 
-## Reference materials
+1. User opens the web application  
+2. Request is sent to the Flask server (`app.py`)  
+3. Server processes the request  
+4. HTML templates are rendered  
+5. Static files (CSS/JS) are applied  
+6. Output is displayed in the browser  
 
-See the `ReferancePaper/` folder for research materials and supporting documents used while developing or researching the project.
+---
+
+## Technologies Used
+
+- Python  
+- Flask  
+- HTML  
+- CSS  
+- JavaScript  
+
+---
 
 
-
-## Demo & Screenshots
-
-Below are illustrative demo images showing the project's workflow and a UI mockup. These are included as SVG placeholders — replace them with real screenshots if you have them.
-
-- Workflow diagram: static/images/demo_workflow_1.svg
-
-	![Workflow diagram](static/images/demo_workflow_1.svg)
-
-- UI mockup / demo screenshot: static/images/demo_workflow_2.svg
-
-	![UI mockup](static/images/demo_workflow_2.svg)
-
-How to replace the images:
-
-1. Add your PNG/JPEG/SVG files to `static/images/` with the same filenames, or update the image paths above.
-2. Commit and push the changes; the README will display the updated images on GitHub.
 
