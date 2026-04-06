@@ -199,7 +199,11 @@ By using BlockX, users will gain a clear understanding of:
 
 Overall, BlockX serves as a **hands-on educational tool** for learning the foundational principles of blockchain in a simple and interactive environment.
 
-## Developer - Ritesh Pandey
+## Team Members 
+  - Ritesh Pandey  (2023BCYOO22)
+  - Pavan Sai      (2023BCYOO29)
+  - Phani Madhav   (2023BCYOO17)
+  - Sai Vivek      (2023BCYOO11)
 
 ---
 
