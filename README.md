@@ -159,5 +159,47 @@ Includes a `ReferancePaper/` folder for additional study materials.
 
 ---
 
+## 🎯 Project Goal
 
+The primary goal of **BlockX** is to provide a practical and visual understanding of how blockchain technology works, with a strong focus on **hashing, data integrity, and validation mechanisms**.
+
+This project is designed to demonstrate the internal working of a blockchain system in a simplified and interactive way, making it easier for beginners to grasp core concepts.
+
+### 🔍 Key Objectives
+
+- **Understand Blockchain Structure**  
+  Demonstrates how each block stores its own hash and the hash of the previous block, forming a secure chain.
+
+- **Learn Hashing Mechanism**  
+  Shows how cryptographic hashing ensures data consistency and uniqueness for every block.
+
+- **Demonstrate Data Integrity**  
+  Highlights how even a small change in block data results in a completely different hash, breaking the chain.
+
+- **Tampering Detection**  
+  Simulates real-world attacks by allowing users to modify block data and observe how validation fails.
+
+- **Chain Validation Process**  
+  Implements a validation system that checks whether all blocks are correctly linked and untampered.
+
+- **Rehashing & Recovery**  
+  Explains how recalculating hashes (rehashing) restores the integrity of the blockchain after tampering.
+
+- **Proof-of-Work Concept**  
+  Introduces mining using difficulty levels (leading zeros), helping users understand how blocks are validated in real blockchain systems.
+
+### 🚀 Learning Outcome
+
+By using BlockX, users will gain a clear understanding of:
+
+- How blockchain maintains **immutability**  
+- Why **hash linking** is critical for security  
+- How **tampering is detected instantly**  
+- The importance of **validation and consensus concepts**  
+
+Overall, BlockX serves as a **hands-on educational tool** for learning the foundational principles of blockchain in a simple and interactive environment.
+
+## Developer - Ritesh Pandey
+
+---
 
