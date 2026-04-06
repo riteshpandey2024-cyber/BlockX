@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blockchain Explorer</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Orbitron:wght@400;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='styles.css') }}"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <!-- HEADER -->
+      <header>
+        <div class="logo">
+          <div class="logo-title">⬡ CHAIN</div>
+          <div class="logo-sub">BLOCKCHAIN VISUALIZER v1.0</div>
+        </div>
+        <div class="header-stats">
+          <div class="stat">
+            <div class="stat-label">BLOCKS</div>
+            <div class="stat-value" id="stat-blocks">0</div>
+          </div>
+          <div class="stat">
+            <div class="stat-label">DIFFICULTY</div>
+            <div class="stat-value" id="stat-diff">3</div>
+          </div>
+          <div class="stat">
+            <div class="stat-label">STATUS</div>
+            <div
+              class="stat-value"
+              id="stat-status"
+              style="color: var(--muted)"
+            >
+              —
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- INIT / SETTINGS -->
+      <div class="panel" id="init-panel">
+        <div class="panel-title">▸ Chain Configuration</div>
+        <div
+          style="display: flex; align-items: center; gap: 28px; flex-wrap: wrap"
+        >
+          <div class="difficulty-row">
+            <span class="diff-label">DIFFICULTY</span>
+            <input
+              type="range"
+              id="difficulty-slider"
+              min="1"
+              max="5"
+              value="3"
+            />
+            <span class="diff-val" id="diff-display">3</span>
+            <span class="diff-label" style="margin-left: 4px"
+              >LEADING ZEROS</span
+            >
+          </div>
+          <button id="init-btn" class="btn btn-primary">
+            INITIALIZE CHAIN
+          </button>
+          <button id="reset-btn" class="btn btn-danger">RESET</button>
+        </div>
+      </div>
+
+      <!-- ADD BLOCK -->
+      <div class="panel" id="add-panel" style="display: none">
+        <div class="panel-title">▸ Add New Block</div>
+        <div class="form-row">
+          <div class="field">
+            <label>TRANSACTION DATA</label>
+            <input
+              type="text"
+              id="block-data"
+              placeholder="e.g. Alice → Bob: 5 BTC"
+            />
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 6px">
+            <label
+              style="
+                font-size: 0.65rem;
+                color: var(--muted);
+                letter-spacing: 2px;
+              "
+              >&nbsp;</label
+            >
+            <button class="btn btn-primary" id="mine-btn">⛏ MINE BLOCK</button>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 6px">
+            <label
+              style="
+                font-size: 0.65rem;
+                color: var(--muted);
+                letter-spacing: 2px;
+              "
+              >&nbsp;</label
+            >
+            <button id="load-samples-btn" class="btn btn-outline">
+              LOAD SAMPLES
+            </button>
+          </div>
+        </div>
+        <div id="mining-status">
+          <div class="spinner"></div>
+          <span class="mine-text">MINING IN PROGRESS...</span>
+          <span id="mine-nonce">nonce: 0</span>
+        </div>
+      </div>
+
+      <!-- CHAIN DISPLAY -->
+      <div class="panel" id="chain-panel" style="display: none">
+        <div class="panel-title">▸ Blockchain</div>
+        <div class="controls-row">
+          <button id="validate-btn" class="btn btn-outline">
+            ✓ VALIDATE CHAIN
+          </button>
+          <div class="sep"></div>
+        </div>
+        <div id="validation-result">
+          <span class="val-icon"></span>
+          <span id="val-message"></span>
+        </div>
+        <div id="chain-container"></div>
+      </div>
+
+      <!-- TAMPER PANEL -->
+      <div class="panel" id="tamper-panel" style="display: none">
+        <div class="panel-title">▸ Tamper Simulation</div>
+        <p
+          style="
+            font-size: 0.75rem;
+            color: var(--muted);
+            margin-bottom: 16px;
+            line-height: 1.7;
+          "
+        >
+          Modify a block's data to simulate a tampering attack. Then validate
+          the chain to see integrity fail.
+        </p>
+        <div class="tamper-row">
+          <div class="field">
+            <label>BLOCK INDEX</label>
+            <select id="tamper-index" style="width: 90px"></select>
+          </div>
+          <div class="field">
+            <label>NEW DATA</label>
+            <input
+              type="text"
+              id="tamper-data"
+              placeholder="Tampered transaction..."
+            />
+          </div>
+          <div class="field">
+            <label style="visibility: hidden">.</label>
+            <button id="tamper-btn" class="btn btn-danger">⚠ TAMPER</button>
+          </div>
+          <div class="field">
+            <label style="visibility: hidden">.</label>
+            <button id="rehash-btn" class="btn btn-outline">REHASH FROM</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TOAST -->
+    <div id="toast"></div>
+
+    <script src="{{ url_for('static', filename='main.js') }}"></script>
+  </body>
+</html>
